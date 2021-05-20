@@ -45,6 +45,7 @@ public class ReportController {
 
         if (medication.getCount() < report.getCount()) {
             report.setStatus(false);
+            reportRepository.insert(report);
             return new MessageResource("Sorry, we don't have so many medications");
         } else
         {
